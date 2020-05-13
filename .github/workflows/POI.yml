@@ -1,0 +1,30 @@
+name: .NET Core
+
+on:
+  push:
+    branches: [ openhack_refresh ]
+    # file paths to consider in the event. Optional; defaults to all.
+    paths:
+      - 'apis/poi/**'
+  pull_request:
+    branches: [ openhack_refresh ]
+    # file paths to consider in the event. Optional; defaults to all.
+    paths:
+      - 'apis/poi/**'
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.101
+    - name: Install dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
+    - name: Test
+      run: dotnet test --no-restore --verbosity normal
