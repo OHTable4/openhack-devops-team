@@ -1,13 +1,8 @@
 name: .NET Core
 
 on:
-  push:
-    branches: [ openhack_refresh ]
-    # file paths to consider in the event. Optional; defaults to all.
-    paths:
-      - 'apis/poi/**'
   pull_request:
-    branches: [ openhack_refresh ]
+    branches: [ master ]
     # file paths to consider in the event. Optional; defaults to all.
     paths:
       - 'apis/poi/**'
