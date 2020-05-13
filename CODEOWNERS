@@ -22,7 +22,7 @@
 # directory at the root of the repository and any of its
 # subdirectories.
 /apis/poi/ @lachaves
-/apis/trips/ @@lizz4896
+/apis/trips/ @lizz4896
 /apis/user-java/ @exchmaster
 /apis/userprofile/ @exchmaster
 
