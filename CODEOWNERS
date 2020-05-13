@@ -5,7 +5,7 @@
 # the repo. Unless a later match takes precedence,
 # @global-owner1 and @global-owner2 will be requested for
 # review when someone opens a pull request.
-*       @lachaves @lizz4896
+*       @lachaves @lizz4896 @exchmaster @darrylcodes @Diego-Calvo
 
 # Order is important; the last matching pattern takes the most
 # precedence. When someone opens a pull request that only
@@ -22,9 +22,9 @@
 # directory at the root of the repository and any of its
 # subdirectories.
 /apis/poi/ @lachaves
-/apis/trips/ @@lizz4896
+/apis/trips/ @lizz4896
 /apis/user-java/ @exchmaster
-/apis/userprofile/ @exchmaster
+/apis/userprofile/ @darrylcodes
 
 # The `docs/*` pattern will match files like
 # `docs/getting-started.md` but not further nested files like
