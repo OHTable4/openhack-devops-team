@@ -10,7 +10,6 @@ RUN dotnet restore
 # pay attention this time
 # using the login action
 # using the correct syntax (we hope)
-# what's my secret?
 
 # copy everything else and build
 COPY . ./
