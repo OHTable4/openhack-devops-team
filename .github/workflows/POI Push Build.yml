@@ -16,10 +16,15 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+# Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
+    
+    # Login to Azure
+    - uses: azure/login@v1.1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     # Runs a set of commands using the runners shell
     - name: Run a multi-line script
@@ -27,6 +32,4 @@ jobs:
            echo "Changing directory to apis/poi/web..."
            cd apis/poi/web
            echo ${AZURE_SERVICE_USER}
-           az login --username ${AZURE_SERVICE_USER} --password ${AZURE_SERVICE_PASSWORD}
-           az acr login --username ${AZURE_CREDENTIALS} --password ${ACR_PassWord}
-           az acr build --image "devopsoh/api-poi:${GITHUB_RUN_NUMBER}" --registry ${AZURE_ACR_FQDN} --file Dockerfile .
+           az acr build --image "devopsoh/api-poi:${{ GITHUB_RUN_NUMBER }}" --registry ${{ secrets.AZURE_ACR_FQDN }} --file Dockerfile .
