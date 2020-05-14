@@ -18,6 +18,7 @@ RUN dotnet restore
 # one brace for built-in variables
 # tagging
 # literal tag
+# no curlies
 
 # copy everything else and build
 COPY . ./
