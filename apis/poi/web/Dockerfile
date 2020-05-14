@@ -23,6 +23,7 @@ RUN dotnet restore
 # Modify slot-name
 # try and try again
 # check staging slot health
+# try to autoswap
 
 
 # copy everything else and build
