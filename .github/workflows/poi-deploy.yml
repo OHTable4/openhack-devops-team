@@ -40,7 +40,7 @@ jobs:
       uses: Azure/webapps-deploy@v2
       with:
         app-name: openhackjra3xid0poi
-        slot-name: openhackjra3xid0poi-staging
+        slot-name: staging
         images: openhackjra3xid0acr.azurecr.io/devopsoh/api-poi:$GITHUB_RUN_NUMBER
 
       # Remove Azure session
