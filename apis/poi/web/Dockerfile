@@ -24,8 +24,6 @@ RUN dotnet restore
 # try and try again
 # check staging slot health
 # try to autoswap
-# SWAP!!
-# SWAP AGAIN!
 
 # copy everything else and build
 COPY . ./
