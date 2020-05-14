@@ -16,6 +16,7 @@ RUN dotnet restore
 # no, really, pay attention
 # Fix the YAML
 # one brace for built-in variables
+# tagging
 
 
 # copy everything else and build
