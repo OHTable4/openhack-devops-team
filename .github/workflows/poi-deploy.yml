@@ -48,7 +48,7 @@ jobs:
         AZURE_ACR_FQDN: ${{ secrets.AZURE_ACR_FQDN }}
       run: |
         echo "Checking staging slot health using /api/healthcheck/poi, if healthy then swap"
-        if [ $(curl https://openhackjra3xid0poi-staging.azurewebsites.net/api/healthcheck/poi) == "Healthy" ];then az webapp deployment slot swap -n openhackjra3xid0poi -g openhackjra3xid0rg -s staging --target-slot production;fi
+        if [ $(curl https://openhackjra3xid0poi-staging.azurewebsites.net/api/healthcheck/poi) == "Healthy" ];then echo "true condition";fi
       # Remove Azure session
     - name: Azure logout
       run: |
