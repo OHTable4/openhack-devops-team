@@ -12,6 +12,7 @@ RUN dotnet restore
 # using the correct syntax (we hope)
 # what's my secret?
 # pleeaaase work!
+# gettin tired now...
 
 # copy everything else and build
 COPY . ./
