@@ -35,3 +35,15 @@ jobs:
         echo "Changing directory to apis/poi/web..."
         cd apis/poi/web
         az acr build --image "devopsoh/api-poi:$GITHUB_RUN_NUMBER" --registry "$AZURE_ACR_FQDN" --file Dockerfile .
+    # Deploy to preprod slot
+    - name: Deploy to Azure Web App staging slot
+      uses: Azure/webapps-deploy@v2
+      with:
+        app-name: openhackjra3xid0poi
+        slot-name: openhackjra3xid0poi-staging
+        images: openhackjra3xid0acr.azurecr.io/devopsoh/api-poi:$GITHUB_RUN_NUMBER
+
+      # Remove Azure session
+    - name: Azure logout
+      run: |
+        az logout
