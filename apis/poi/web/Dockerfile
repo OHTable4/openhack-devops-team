@@ -20,6 +20,7 @@ RUN dotnet restore
 # literal tag
 # no curlies
 # First prayer, Az web app deploy
+# Modify slot-name
 
 # copy everything else and build
 COPY . ./
