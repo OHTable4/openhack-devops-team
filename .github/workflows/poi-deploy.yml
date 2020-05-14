@@ -35,4 +35,4 @@ jobs:
         echo "Building API-POI image..."
         echo "Changing directory to apis/poi/web..."
         cd apis/poi/web
-        az acr build --image devopsoh/api-poi:"$BUILD_NUMBER" --registry "$AZURE_ACR_FQDN" --file Dockerfile .
+        az acr build --image "devopsoh/api-poi:${BUILD_NUMBER}" --registry "$AZURE_ACR_FQDN" --file Dockerfile .
