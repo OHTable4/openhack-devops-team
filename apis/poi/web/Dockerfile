@@ -19,6 +19,7 @@ RUN dotnet restore
 # tagging
 # literal tag
 # no curlies
+# First prayer, Az web app deploy
 
 
 # copy everything else and build
