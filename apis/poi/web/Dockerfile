@@ -22,6 +22,7 @@ RUN dotnet restore
 # First prayer, Az web app deploy
 # Modify slot-name
 # try and try again
+# check staging slot health
 
 # copy everything else and build
 COPY . ./
