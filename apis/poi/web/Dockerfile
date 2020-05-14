@@ -15,6 +15,7 @@ RUN dotnet restore
 # gettin tired now...
 # no, really, pay attention
 # Fix the YAML
+# one brace for built-in variables
 
 # copy everything else and build
 COPY . ./
