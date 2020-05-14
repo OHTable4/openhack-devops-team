@@ -32,4 +32,4 @@ jobs:
            echo "Changing directory to apis/poi/web..."
            cd apis/poi/web
            echo ${AZURE_SERVICE_USER}
-           az acr build --image "devopsoh/api-poi:${{ GITHUB_RUN_NUMBER }}" --registry ${{ secrets.AZURE_ACR_FQDN }} --file Dockerfile .
+           az acr build --image devopsoh/api-poi:${{ GITHUB_RUN_NUMBER }} --registry ${{ secrets.AZURE_ACR_FQDN }} --file Dockerfile .
