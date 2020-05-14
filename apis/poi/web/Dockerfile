@@ -14,6 +14,7 @@ RUN dotnet restore
 # pleeaaase work!
 # gettin tired now...
 # no, really, pay attention
+# Fix the YAML
 
 # copy everything else and build
 COPY . ./
