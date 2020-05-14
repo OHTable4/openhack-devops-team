@@ -13,7 +13,7 @@ RUN dotnet restore
 # what's my secret?
 # pleeaaase work!
 # gettin tired now...
-# no, really, pay attention
+
 
 # copy everything else and build
 COPY . ./
