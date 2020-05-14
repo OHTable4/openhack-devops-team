@@ -8,6 +8,8 @@ RUN dotnet restore
 # trigger a deployment
 # trigger another deployment
 # pay attention this time
+# using the login action
+
 # copy everything else and build
 COPY . ./
 RUN dotnet publish -c Release -o out
