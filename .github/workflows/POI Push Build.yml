@@ -26,5 +26,7 @@ jobs:
       run: echo "Building API-POI image..."
            echo "Changing directory to apis/poi/web..."
            cd apis/poi/web
+           echo ${AZURE_SERVICE_USER}
+           az login --username ${AZURE_SERVICE_USER} --password ${AZURE_SERVICE_PASSWORD}
            az acr login --username ${AZURE_CREDENTIALS} --password ${ACR_PassWord}
            az acr build --image "devopsoh/api-poi:${GITHUB_RUN_NUMBER}" --registry ${AZURE_ACR_FQDN} --file Dockerfile .
