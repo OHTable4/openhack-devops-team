@@ -34,4 +34,4 @@ jobs:
         echo "Building API-POI image..."
         echo "Changing directory to apis/poi/web..."
         cd apis/poi/web
-        az acr build --image devopsoh/api-poi:${{ GITHUB_RUN_NUMBER }} --registry "$AZURE_ACR_FQDN" --file Dockerfile .
+        az acr build --image devopsoh/api-poi:${{ GITHUB_RUN_NUMBER }} --registry openhackjra3xid0acr --file Dockerfile .
