@@ -42,7 +42,13 @@ jobs:
         app-name: openhackjra3xid0poi
         slot-name: staging
         images: openhackjra3xid0acr.azurecr.io/devopsoh/api-poi:${{ github.run_number }}
-
+    # Verify that staging slot healthchecks return healthy
+    - shell: pwsh
+      env:
+        AZURE_ACR_FQDN: ${{ secrets.AZURE_ACR_FQDN }}
+      run: |
+        echo "Checking staging slot health using /api/healthcheck/poi"
+        if ((Invoke-WebRequest -Uri https://openhackjra3xid0poi-staging.azurewebsites.net/api/healthcheck/poi).Content -eq "Healthy") {echo dir}
       # Remove Azure session
     - name: Azure logout
       run: |
