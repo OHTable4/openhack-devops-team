@@ -21,6 +21,7 @@ RUN dotnet restore
 # no curlies
 # First prayer, Az web app deploy
 # Modify slot-name
+# try and try again
 
 # copy everything else and build
 COPY . ./
