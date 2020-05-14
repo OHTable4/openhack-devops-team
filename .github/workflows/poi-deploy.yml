@@ -43,7 +43,7 @@ jobs:
         slot-name: staging
         images: openhackjra3xid0acr.azurecr.io/devopsoh/api-poi:${{ github.run_number }}
     # Verify that staging slot healthchecks return healthy
-    - shell: pwsh
+    - shell: bash
       env:
         AZURE_ACR_FQDN: ${{ secrets.AZURE_ACR_FQDN }}
       run: |
