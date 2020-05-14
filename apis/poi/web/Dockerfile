@@ -6,6 +6,7 @@ COPY *.csproj ./
 RUN dotnet restore
 
 # trigger a deployment
+# trigger another deployment
 # copy everything else and build
 COPY . ./
 RUN dotnet publish -c Release -o out
