@@ -30,7 +30,7 @@ jobs:
     - shell: bash
       env:
         AZURE_ACR_FQDN: ${{ secrets.AZURE_ACR_FQDN }}
-        BUILD_NUMBER: ${{ GITHUB_RUN_NUMBER }} 
+        BUILD_NUMBER: ${ GITHUB_RUN_NUMBER } 
       run: |
         echo "Building API-POI image..."
         echo "Changing directory to apis/poi/web..."
