@@ -27,9 +27,11 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
-      run: echo "Building API-POI image..."
-           echo "Changing directory to apis/poi/web..."
-           cd apis/poi/web
-           echo ${AZURE_SERVICE_USER}
-           az acr build --image devopsoh/api-poi:${{ GITHUB_RUN_NUMBER }} --registry ${{ secrets.AZURE_ACR_FQDN }} --file Dockerfile .
+    - shell: bash
+      env:
+        AZURE_ACR_FQDN: ${{ secrets.AZURE_ACR_FQDN }}
+      run: |
+        echo "Building API-POI image..."
+        echo "Changing directory to apis/poi/web..."
+        cd apis/poi/web
+        az acr build --image devopsoh/api-poi:${{ GITHUB_RUN_NUMBER }} --registry "$AZURE_ACR_FQDN" --file Dockerfile .
